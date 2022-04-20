@@ -2,10 +2,15 @@
 #include "song.h"
 #include "songify.h"
 
-void addAlbum(Songify *artists, Artist *Artist, Album *newAlbum)
+Artist *addAlbum(Songify *artists, Artist *Artist, Album *newAlbum)
 {
     
 
 
     return artists;
+}
+
+void printAllAlbums(Songify *artists, Artist *artist)
+{
+
 }

@@ -5,7 +5,6 @@
 #define BUFSIZE 1024
 
 Songify addArtist(Songify *artists, Artist *newArtist);
-void 
 
 typedef struct songify
 {

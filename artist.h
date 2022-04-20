@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <string.h>
+#include "album.h"
 #include "song.h"
+#define BUFSIZE 1024
 
-typedef struct album
-{
-    char* name;
-    song* songs;
-    Album* next;
-} Album ;
+Artist addAlbum(Songify *artists, Artist *Artist, Album *newAlbum);
+void printAllAlbums(Songify *artists, Artist *artist);
+
 
 typedef struct artist
 {

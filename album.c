@@ -17,7 +17,7 @@ int numOfsongs(Songify *artists, Album *TheAlbum)
 
 int lenOfalbum(Songify *artists, Album *TheAlbum, Artist *TheArtist)
 {
-    int sec_count = 0, min_count = 0, hour_count = 0;
+    int sec_count = 0 ;
 
-    
+
 }
