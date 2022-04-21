@@ -2,6 +2,7 @@
 #include <string.h>
 #include "album.h"
 #include "song.h"
+
 #define BUFSIZE 1024
 
 Artist addAlbum(Songify *artists, Artist *Artist, Album *newAlbum);

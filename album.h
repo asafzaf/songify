@@ -1,4 +1,3 @@
-#include "artist.h"
 #include "song.h"
 #include "songify.h"
 
