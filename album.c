@@ -1,23 +1,24 @@
-#include "album.h"
-#include "songify.h"
-#include "song.h"
+#include <stdio.h>
+#include "struct.h"
 
-Album *addSong(Songify *artists, Song *newSong, Album *TheAlbum, Artist *TheArtist)
+
+
+void addSong(songify *artists)
 {
-
-    return artists;
+    printf("add song\n");
+    return ;
 }
 
-int numOfsongs(Songify *artists, Album *TheAlbum)
+int numOfsongs(songify *artists, album *TheAlbum)
 {
     int counter = 0;
 
     return counter;
 }
 
-int lenOfalbum(Songify *artists, Album *TheAlbum, Artist *TheArtist)
+int lenOfalbum(songify *artists, album *TheAlbum, artist *TheArtist)
 {
     int sec_count = 0 ;
 
-
+return sec_count;
 }

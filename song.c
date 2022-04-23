@@ -1,15 +1,13 @@
-#include "song.h"
-#include "artist.h"
-#include "album.h"
-#include "songify.h"
+#include <stdio.h>
+#include "struct.h"
 
-void playSong(Songify *head, Artist *theArtist, Album *theAlbum, Song *theSong)
+void playSong(songify *head, artist *theArtist, album *theAlbum, song *theSong)
 {
-
+printf("play song\n");
 }
 
-void addTOfavorites(Songify *head, const char *Artistname, const char *Albumname, const char *Songname)
+void addTOfavorites(songify *head, const char *Artistname, const char *Albumname, const char *Songname)
 {
-    Songify songifyptr = head;
-    if ( songifyptr. )
+   
+    printf("addtofavotes\n");
 }

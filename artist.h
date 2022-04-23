@@ -1,25 +1,17 @@
 #include <stdio.h>
 #include <string.h>
-#include "album.h"
-#include "song.h"
-
 #define BUFSIZE 1024
+#include "struct.h"
 
-Artist addAlbum(Songify *artists, Artist *Artist, Album *newAlbum);
-void printAllAlbums(Songify *artists, Artist *artist);
+artist addAlbum(songify *artists, artist *Artist, album *newAlbum);
+void printAllAlbums(songify *artists, artist *artist);
+songify addArtist(songify *artists, artist *newArtist);
 
 
-typedef struct artist
-{
-    char* name;
-    struct activeYears active;
-    Album* albums;
-    Artist* next;
-} Artist ;
 
-typedef struct activeYears
-{
-    int firstYear;
-    int lastYear;
-} ActiveYears ;
+
+
+
+
+
 

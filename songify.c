@@ -1,10 +1,11 @@
-#include "artist.h"
-#include "song.h"
+#include <stdio.h>
 #include "songify.h"
 
-Songify *addArtist(Songify *artists, Artist *newArtist)
+
+
+songify *addArtist(songify *artists, artist *newArtist)
 {
-    
+    printf("add artist\n");
 
     return artists;
 }

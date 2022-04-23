@@ -1,12 +1,11 @@
-#include <stdio.h>
+
 #include <string.h>
-#include "song.h"
-#include "artist.h"
+#include <stdio.h>
+#ifndef __STRUCT_H__
+#define __STRUCT_H__
+#include "struct.h"
 #define BUFSIZE 1024
 
-Songify addArtist(Songify *artists, Artist *newArtist);
 
-typedef struct songify
-{
-    Artist* artists;
-} Songify ;
+#endif // !__STRUCT_H__
+songify *addArtist(songify *artists, artist *newArtist);

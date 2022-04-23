@@ -1,12 +1,8 @@
-#include "song.h"
-#include "songify.h"
 
-Album *addSong(Songify *artists, Song *newSong, Album *TheAlbum, Artist *TheArtist);
-int numOfsongs(Songify *artists, Album *TheAlbum);
+#include <stdio.h>
+#include <string.h>
+#include "struct.h"
 
-typedef struct album
-{
-    char* name;
-    Song* songs;
-    Album* next;
-} Album ;
+
+album *addSong(songify *artists, song *newSong, album *TheAlbum, artist *TheArtist);
+int numOfsongs(songify *artists, album *TheAlbum);

@@ -1,16 +1,15 @@
-#include "artist.h"
-#include "song.h"
-#include "songify.h"
 
-Artist *addAlbum(Songify *artists, Artist *Artist, Album *newAlbum)
+#include "struct.h"
+
+artist *addAlbum(songify *artists, artist *Artist, album *newAlbum)
 {
     
 
 
-    return artists;
+    return artists->artists;
 }
 
-void printAllAlbums(Songify *artists, Artist *artist)
+void printAllAlbums(songify *artists, artist *artist)
 {
 
 }
