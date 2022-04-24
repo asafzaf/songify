@@ -4,8 +4,9 @@
 #ifndef __STRUCT_H__
 #define __STRUCT_H__
 #include "struct.h"
-#define BUFSIZE 1024
+#endif
 
 
-#endif // !__STRUCT_H__
-songify *addArtist(songify *artists, artist *newArtist);
+void set_activeTime(artist **artist);
+artist *artist_existance(artist *head, const char *artist_name);
+void addArtist(songify **artists);

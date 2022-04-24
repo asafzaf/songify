@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
-#define BUFSIZE 1024
+#ifndef __STRUCT_H__
+#define __STRUCT_H__
 #include "struct.h"
+#endif
 
 
 void addTOfavorites(songify *head, const char *Artistname, const char *Albumname, const char *Songname);

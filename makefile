@@ -5,7 +5,7 @@ run: prog
 prog: $(OBJCT)
 	$(cc) $(OBJCT) -o songify
 
-main.o: main.c struct.h
+main.o: main.c main.h struct.h
 	gcc -c main.c
 
 songify.o: songify.c songify.h struct.h
@@ -21,4 +21,4 @@ song.o: song.c song.h struct.h
 	gcc -c song.c
 
 clean:
-	rm -f *.o
+	del *.o 

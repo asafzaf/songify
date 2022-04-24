@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define BUFSIZE 1000
+#define REMOVE_ENTER(c) (c) == '\n' ? (c) = '\0' : (c)
 
 enum BOOL {FALSE, TRUE};
 typedef struct song
