@@ -1,3 +1,7 @@
+#ifndef __ARTIST__
+#define __ARTIST__
+#endif
+
 #ifndef __STRUCT_H__
 #define __STRUCT_H__
 #include "struct.h"
