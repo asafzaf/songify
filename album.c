@@ -1,6 +1,6 @@
+#include "struct.h"
 #ifndef __ARTIST__
 #define __ARTIST__
-#include "struct.h"
 #include "artist.h"
 #endif
 
@@ -30,7 +30,7 @@ void addSong(songify **artists, const char *theAlbum)
     fgets(buff,BUFSIZE,stdin);
     length = strlen(buff);
     REMOVE_ENTER(buff[length - 1]);
-    curr_album = album_existance(artist, buff);
+    curr_album = find_album(artist, buff);
     if(curr_album == NULL){
         printf("Sorry, that album does not exist in our library\n");
         return;
@@ -90,32 +90,95 @@ void addSong(songify **artists, const char *theAlbum)
 int numOfsongs(songify *artists, album *TheAlbum)
 {
     int counter = 0;
+    artist *curr_artist;
+    album *curr_album;
+    
+    char buff[BUFSIZE];
+    int length;
+    fflush(stdin);
+    printf("Enter artist name: ");
+    fgets(buff,BUFSIZE,stdin);
+   
+    length = strlen(buff);
+    REMOVE_ENTER(buff[length-1]);
+    curr_artist = artist_existance(artists, buff);
+    if(curr_artist == NULL){
+        printf("Sorry, that artist does not exist in our library\n");
+        return;
+    }
+    
+    printf("Enter album name: ");
+    fgets(buff,BUFSIZE,stdin);
+    length = strlen(buff);
+    REMOVE_ENTER(buff[length - 1]);
+    curr_album = find_album(curr_artist->albums, buff);
+    if(curr_album == NULL){
+        printf("Sorry, that album does not exist in our library\n");
+        return;
+    }
+
+    song *curr_song = curr_album->songs;
+    if(curr_song == NULL){
+        printf("This album has no songs!\n");
+        return counter;
+    }
+    ++counter;
+
+    while( curr_song->next != NULL )
+    {
+        ++counter;
+        curr_song = curr_song->next;
+    }
 
     return counter;
 }
 
-int lenOfalbum(songify *artists, album *TheAlbum, artist *TheArtist)
+int lenOfalbum(songify *artists)
 {
-    int sec_count = 0 ;
-
-return sec_count;
-}
-
-artist *album_existance(artist *artist, const char *album_name)
-{
+    int timer = 0;
+    artist *curr_artist;
     album *curr_album;
-
-    curr_album = artist->albums; 
-    while (curr_album != NULL)
-    {
-        if (!strcmp(curr_album->name, album_name))
-        {
-            return curr_album;
-        }
-        curr_album = curr_album->next;
+    
+    char buff[BUFSIZE];
+    int length;
+    fflush(stdin);
+    printf("Enter artist name: ");
+    fgets(buff,BUFSIZE,stdin);
+   
+    length = strlen(buff);
+    REMOVE_ENTER(buff[length-1]);
+    curr_artist = artist_existance(artists, buff);
+    if(curr_artist == NULL){
+        printf("Sorry, that artist does not exist in our library\n");
+        return;
+    }
+    
+    printf("Enter album name: ");
+    fgets(buff,BUFSIZE,stdin);
+    length = strlen(buff);
+    REMOVE_ENTER(buff[length - 1]);
+    curr_album = find_album(curr_artist->albums, buff);
+    if(curr_album == NULL){
+        printf("Sorry, that album does not exist in our library\n");
+        return;
     }
 
-    return NULL;
+    song *curr_song = curr_album->songs;
+    if(curr_song == NULL){
+        printf("This album has no songs!\n");
+        return timer;
+    }
+
+    timer += curr_song->length;
+
+    while( curr_song->next != NULL )
+    {
+        curr_song = curr_song->next;
+        timer += curr_song->length;
+    }
+    
+    return timer;
+
 }
 
 album *find_song(album *head, const char *song_name){
