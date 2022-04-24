@@ -45,12 +45,6 @@ void addAlbum(songify **artists)
     strcpy(album_name,buff);
     
     artist->name = album_name;
-    
-
-
-
-
- 
 }
 
 album *find_album(artist *head, const char *album_name){

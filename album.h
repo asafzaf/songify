@@ -10,4 +10,6 @@
 
 
 album *addSong(songify *artists, song *newSong, album *TheAlbum, artist *TheArtist);
-int numOfsongs(songify *artists, album *TheAlbum);
+int numOfsongs(songify *artists,  const char *TheAlbum);
+album *find_song(album *head, const char *song_name);
+

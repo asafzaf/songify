@@ -21,4 +21,4 @@ song.o: song.c song.h struct.h
 	gcc -c song.c
 
 clean:
-	del *.o 
+	del *.o songify.exe
