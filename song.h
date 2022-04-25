@@ -1,5 +1,9 @@
-#ifndef __STRUCT_H__
-#define __STRUCT_H__
+#ifndef __SONG__
+#define __SONG__
+#endif
+
+#ifndef __SONGIFY__
+#define __SONGIFY__
 #include "struct.h"
 #endif
 

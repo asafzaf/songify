@@ -5,7 +5,7 @@ run: prog
 prog: $(OBJCT)
 	$(cc) $(OBJCT) -o songify
 
-main.o: main.c main.h struct.h
+main.o: main.c struct.h
 	gcc -c main.c
 
 songify.o: songify.c songify.h struct.h
