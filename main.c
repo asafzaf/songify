@@ -8,12 +8,13 @@ int main()
     unsigned int choice;
     for (;;)
     {
-        printf("\t\tMake a choice!\n"
-               "\t\t~~~~~~~~~~~~~~\n\n"
+        printf("\t\t   Make a choice!\n"
+               "\t\t  ~~~~~~~~~~~~~~~~\n\n"
                "\t1. Add artist\t\t2. Add an album\n"
                "\t3. Artist's albums\t4. Add song\n"
                "\t5. Song count\t\t6. Album's length\n"
                "\t7. Play song\t\t8. Add to favorits\n"
+               "\n\t\t      9. Exit\n"
                "Choose: ");
         scanf("%d", &choice);
         while (choice > 9){
@@ -26,10 +27,10 @@ int main()
            addArtist(&system);
             break;
         case 2:
-            /* code */
+            addAlbum(&system);
             break;
         case 3:
-            /* code */
+            printAllAlbums(system);
             break;
         case 4:
             /* code */

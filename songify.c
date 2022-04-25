@@ -22,6 +22,7 @@ void addArtist(songify **artists)
             return;
         }
         (*artists)->artists = NULL;
+        
     }
 
     new_artist = (artist *)malloc(sizeof(artist));
