@@ -1,7 +1,5 @@
-#ifndef __SONGIFY__
-#define __SONGIFY__
 #include "songify.h"
-#endif
+
 
 void addArtist(songify **artists)
 {

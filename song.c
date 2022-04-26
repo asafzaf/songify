@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include "struct.h"
 #include "song.h"
 
 void playSong(songify *head)
@@ -16,7 +14,7 @@ void playSong(songify *head)
    
     length = strlen(buff);
     REMOVE_ENTER(buff[length-1]);
-    curr_artist = artist_existance(head, buff);
+    curr_artist = artist_existance(head->artists, buff);
     if(curr_artist == NULL){
         printf("Sorry, that artist does not exist in our library\n");
         return;
@@ -42,7 +40,7 @@ void playSong(songify *head)
         return;
     }
 
-    printf("%s  len: %d liked? %s", curr_song->name , curr_song->length , curr_song->liked);
+    printf("%s  len: %d liked? %d", curr_song->name , curr_song->length , curr_song->liked);
     curr_song->timePlayed += 1;
 
     return;    
@@ -62,7 +60,7 @@ void addTOfavorites(songify *head)
    
     length = strlen(buff);
     REMOVE_ENTER(buff[length-1]);
-    curr_artist = artist_existance(head, buff);
+    curr_artist = artist_existance(head->artists, buff);
     if(curr_artist == NULL){
         printf("Sorry, that artist does not exist in our library\n");
         return;
@@ -88,7 +86,7 @@ void addTOfavorites(songify *head)
         return;
     }
 
-    curr_song->liked = 1;
+    curr_song->liked = TRUE;
 
     return;
 }

@@ -3,6 +3,9 @@
 int main()
 {
     songify *system = NULL;
+    int song_number;
+    int album_length;
+
     
 
     unsigned int choice;
@@ -23,37 +26,45 @@ int main()
         }
         switch (choice)
         {
-        case 1:
+        case 1:{
            addArtist(&system);
             break;
-        case 2:
+        }
+        case 2:{
             addAlbum(&system);
             break;
-        case 3:
+        }
+        case 3:{
             printAllAlbums(system);
             break;
-        case 4:
-            /* code */
-            break;
-        case 5:
-            /* code */
-            break;
-        case 6:
-            /* code */
-            break;
-        case 7:
-            /* code */
-            break;    
-        case 8:
-            /* code */
-            break;
-         case 9:
-            return 0;
-            break;    
-        
-        default:
+        }
+        case 4:{
+            addSong(&system);
             break;
         }
+        case 5:{
+            song_number = numOfsongs(system);
+            printf("There are %d songs in this album\n\n",song_number);
+            break;
+        }
+        case 6:{
+            album_length = lenOfalbum(system);
+            printf("This album is %d seconds\n\n",album_length);
+            break;
+        }
+        case 7:{
+            playSong(system);
+            break;    
+        }
+        case 8:{
+            addTOfavorites(system);
+            break;
+        }
+         case 9:{
+            return 0;
+            break;    
+         }
+        } // end of switch
     } // end of for
 
     return 0;

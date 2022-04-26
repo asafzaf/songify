@@ -1,3 +1,5 @@
+#ifndef __STRUCT_H__
+#define __STRUCT_H__
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -40,3 +42,5 @@ typedef struct songify
 {
     artist* artists;
 } songify ;
+
+#endif

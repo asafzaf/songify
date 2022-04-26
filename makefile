@@ -5,20 +5,20 @@ run: prog
 prog: $(OBJCT)
 	$(cc) $(OBJCT) -o songify
 
-main.o: main.c struct.h
+main.o: main.c songify.h
 	gcc -c main.c
 
-songify.o: songify.c songify.h struct.h
+songify.o: songify.c songify.h struct.h artist.h album.h songify.h
 	gcc -c songify.c
 
-artist.o: artist.c artist.h struct.h
+artist.o: artist.c artist.h songify.h
 	gcc -c artist.c
 
-album.o: album.c album.h struct.h
+album.o: album.c album.h songify.h
 	gcc -c album.c
 
-song.o: song.c song.h struct.h
+song.o: song.c song.h songify.h
 	gcc -c song.c
 
 clean:
-	del *.o songify.exe
+	rm -f *.o songify.exe
