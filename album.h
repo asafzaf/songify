@@ -6,7 +6,7 @@
 #include "songify.h"
 #endif
 
-void clock(int seconds);
+void clock(int seconds, int counter);
 void addSong(songify **artists);
 int numOfsongs(songify *artists);
 int lenOfalbum(songify *artists);

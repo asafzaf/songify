@@ -120,6 +120,7 @@ int numOfsongs(songify *artists) {
 
 int lenOfalbum(songify *artists) {
   int timer = 0;
+  int counter = 0;
   artist *curr_artist;
   album *curr_album;
   song *curr_song;
@@ -151,9 +152,10 @@ int lenOfalbum(songify *artists) {
   while (curr_song != NULL) {
     timer += curr_song->length;
     curr_song = curr_song->next;
-    printf("and here\n");
+    counter++;
   }
- 
+  printf("%d Songs |",counter);
+  clock(timer, counter);
   return timer;
 }
 
@@ -168,4 +170,15 @@ song *find_song(song *head, const char *song_name) {
     curr_song = curr_song->next;
   }
   return NULL;
+}
+void clock(int seconds, int counter) {
+  int hours;
+  int minuts;
+
+  hours = seconds / 3600;
+  minuts = (seconds - (3600 * hours))/60;
+  seconds = seconds - (3600 * hours) - (60 * minuts);
+
+  hours == 0 ? printf(" %02d min %02d sec\n\n", minuts, seconds)
+             : printf(" %02d h %02d min\n\n", hours, minuts);
 }
