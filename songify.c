@@ -88,7 +88,8 @@ void set_activeTime(artist **artist)
 
     while (since < 1020 || since > 2022)
     {
-        printf("INVALID YEAR\n");
+        printf("INVALID YEAR\nPlease try again: ");
+        getchar();
         scanf("%d", &since);
     }
 
@@ -97,7 +98,8 @@ void set_activeTime(artist **artist)
     
     while (until < since || until >2022)
     {
-        printf("INVALID YEAR\n");
+        printf("INVALID YEAR\nPlease try again: ");
+        getchar();
         scanf("%d", &until);
     }
 

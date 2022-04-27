@@ -10,13 +10,3 @@ album *find_album(album *head, const char *album_name);
 void addAlbum(songify **artists);
 void printAllAlbums(songify *artists);
 #endif
-
-
-
-
-
-
-
-
-
-

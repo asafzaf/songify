@@ -43,7 +43,11 @@ void playSong(songify *head)
     printf("%s length:", curr_song->name);
     clock(curr_song->length,2);
     curr_song->timePlayed++;
-
+    if ( curr_song->liked == 1 ){
+        printf("  * <3 *\n\n");
+    }
+    else printf("  * </3 *\n\n");
+    
     return;    
 }
 

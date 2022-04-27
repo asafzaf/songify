@@ -35,8 +35,11 @@ void addSong(songify **artists) {
   printf("How many songs to be added?: ");
   scanf("%d", &count);
   getchar();
-  if (!count)
+
+  if (count < 1 || count > 20){
+    printf("please enter a real number");
     return;
+  }
 
   for (int i = 0; i < count; i++) {
 
@@ -158,6 +161,7 @@ int lenOfalbum(songify *artists) {
   counter != 1 ? printf("\n%d Songs |", counter)
                : printf("\n%d Song |", counter);
   clock(timer, 1);
+  printf("\n\n");
   return timer;
 }
 
@@ -184,13 +188,13 @@ void clock(int seconds, int option) {
   switch (option) {
   case 1: {
 
-    hours == 0 ? printf(" %02d min %02d sec\n\n", minuts, seconds)
-               : printf(" %02d h %02d min\n\n", hours, minuts);
+    hours == 0 ? printf(" %02d min %02d sec", minuts, seconds)
+               : printf(" %02d h %02d min", hours, minuts);
     break;
   }
   case 2: {
-    hours == 0 ? printf(" %d:%d\n\n", minuts, seconds)
-               : printf(" %d:%d:%d\n\n", hours, minuts, seconds);
+    hours == 0 ? printf(" %02d:%02d", minuts, seconds)
+               : printf(" %02d:%02d:%02d", hours, minuts, seconds);
     break;
   }
   }
