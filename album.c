@@ -33,49 +33,49 @@ void addSong(songify **artists) {
     return;
   }
   printf("How many songs to be added?: ");
-  scanf("%d",&count);
-getchar();
-if(!count)
-    return;
-
-for(int i = 0 ; i < count ; i++ ){
-
-  printf("Enter song name: ");
-  fgets(buff, BUFSIZE, stdin);
-  length = strlen(buff);
-  REMOVE_ENTER(buff[length - 1]);
-  if (find_song(curr_album->songs, buff)) {
-    printf("SONG ALREADY EXISTS!\n");
-    return;
-  }
-
-  new_song = (song *)malloc(sizeof(song));
-  if (!new_song) {
-    printf("OUT OF MEMORY\n");
-    return;
-  }
-
-  song_name = (char *)malloc(strlen(buff) + 1);
-  if (!song_name) {
-    printf("OUT OF MEMORY\n");
-    free(new_song);
-    return;
-  }
-
-  strcpy(song_name, buff);
-  new_song->name = song_name;
-  new_song->liked = FALSE;
-  new_song->timePlayed = 0;
-
-  printf("Enter song lengh: ");
-  scanf("%d", &new_song->length);
+  scanf("%d", &count);
   getchar();
-  new_song->next = curr_album->songs;
-  curr_album->songs = new_song;
+  if (!count)
+    return;
 
-  printf("The song \"%s\" was added to the album!\n", curr_album->songs->name);
+  for (int i = 0; i < count; i++) {
 
-}
+    printf("Enter song name: ");
+    fgets(buff, BUFSIZE, stdin);
+    length = strlen(buff);
+    REMOVE_ENTER(buff[length - 1]);
+    if (find_song(curr_album->songs, buff)) {
+      printf("SONG ALREADY EXISTS!\n");
+      return;
+    }
+
+    new_song = (song *)malloc(sizeof(song));
+    if (!new_song) {
+      printf("OUT OF MEMORY\n");
+      return;
+    }
+
+    song_name = (char *)malloc(strlen(buff) + 1);
+    if (!song_name) {
+      printf("OUT OF MEMORY\n");
+      free(new_song);
+      return;
+    }
+
+    strcpy(song_name, buff);
+    new_song->name = song_name;
+    new_song->liked = FALSE;
+    new_song->timePlayed = 0;
+
+    printf("Enter song lengh: ");
+    scanf("%d", &new_song->length);
+    getchar();
+    new_song->next = curr_album->songs;
+    curr_album->songs = new_song;
+
+    printf("The song \"%s\" was added to the album!\n",
+           curr_album->songs->name);
+  }
   return;
 }
 
@@ -154,8 +154,10 @@ int lenOfalbum(songify *artists) {
     curr_song = curr_song->next;
     counter++;
   }
-  printf("%d Songs |",counter);
-  clock(timer, counter);
+
+  counter != 1 ? printf("\n%d Songs |", counter)
+               : printf("\n%d Song |", counter);
+  clock(timer, 1);
   return timer;
 }
 
@@ -171,14 +173,25 @@ song *find_song(song *head, const char *song_name) {
   }
   return NULL;
 }
-void clock(int seconds, int counter) {
+void clock(int seconds, int option) {
   int hours;
   int minuts;
 
   hours = seconds / 3600;
-  minuts = (seconds - (3600 * hours))/60;
+  minuts = (seconds - (3600 * hours)) / 60;
   seconds = seconds - (3600 * hours) - (60 * minuts);
 
-  hours == 0 ? printf(" %02d min %02d sec\n\n", minuts, seconds)
-             : printf(" %02d h %02d min\n\n", hours, minuts);
+  switch (option) {
+  case 1: {
+
+    hours == 0 ? printf(" %02d min %02d sec\n\n", minuts, seconds)
+               : printf(" %02d h %02d min\n\n", hours, minuts);
+    break;
+  }
+  case 2: {
+    hours == 0 ? printf(" %d:%d\n\n", minuts, seconds)
+               : printf(" %d:%d:%d\n\n", hours, minuts, seconds);
+    break;
+  }
+  }
 }

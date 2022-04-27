@@ -21,4 +21,4 @@ song.o: song.c song.h songify.h
 	gcc -c song.c
 
 clean:
-	rm -f *.o songify.exe
+	del *.o songify.exe

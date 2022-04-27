@@ -40,8 +40,9 @@ void playSong(songify *head)
         return;
     }
 
-    printf("%s  len: %d liked? %d", curr_song->name , curr_song->length , curr_song->liked);
-    curr_song->timePlayed += 1;
+    printf("%s length:", curr_song->name);
+    clock(curr_song->length,2);
+    curr_song->timePlayed++;
 
     return;    
 }
@@ -87,6 +88,7 @@ void addTOfavorites(songify *head)
     }
 
     curr_song->liked = TRUE;
+    printf("\n\"%s\" Was added to your favorits!\n",curr_song->name);
 
     return;
 }
